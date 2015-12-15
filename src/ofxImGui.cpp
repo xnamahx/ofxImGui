@@ -398,6 +398,13 @@ void ofxImGui::openGLES_RendererDrawLists(ImDrawData * draw_data)
 void ofxImGui::glRendererDrawLists(ImDrawData * draw_data)
 {
 #if !defined(TARGET_OPENGLES)
+  
+  ofAppGLFWWindow* baseWindow = (ofAppGLFWWindow*)ofGetWindowPtr();
+  if(glfwGetWindowAttrib(baseWindow->getGLFWWindow(), GLFW_ICONIFIED))
+  {
+    glfwWaitEvents(); 
+    return;
+  }
   GLint last_blend_src;
   GLint last_blend_dst;
   GLint last_blend_equation_rgb;
@@ -494,6 +501,14 @@ void ofxImGui::glRendererDrawLists(ImDrawData * draw_data)
 void ofxImGui::programmableRendererDrawLists(ImDrawData * draw_data)
 {
 #if !defined(TARGET_OPENGLES)
+  
+  ofAppGLFWWindow* baseWindow = (ofAppGLFWWindow*)ofGetWindowPtr();
+  if(glfwGetWindowAttrib(baseWindow->getGLFWWindow(), GLFW_ICONIFIED))
+  {
+    glfwWaitEvents(); 
+    return;
+  }
+  
   GLboolean last_enable_scissor_test = glIsEnabled(GL_SCISSOR_TEST);
 
   glEnable(GL_SCISSOR_TEST);
