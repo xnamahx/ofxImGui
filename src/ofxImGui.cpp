@@ -118,6 +118,10 @@ void ofxImGui::begin()
         io->DeltaTime = 1.0f / 60.f;
     }
     lastTime = currentTime;
+	
+	if (!engine->fontTexture)
+		engine->createDeviceObjects();
+
     
 
     io->MousePos = ImVec2((float)ofGetMouseX(), (float)ofGetMouseY());
@@ -135,6 +139,7 @@ void ofxImGui::close()
 {
     if(engine)
     {
+		engine->invalidateDeviceObjects();
         delete engine;
         engine = NULL;
     }
@@ -153,6 +158,8 @@ void ofxImGui::close()
         delete loadedTextures[i];
     }
     loadedTextures.clear();
+
+	
 }
 
 ofxImGui::~ofxImGui()

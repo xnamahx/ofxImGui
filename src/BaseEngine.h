@@ -39,7 +39,18 @@ public:
     
     static unsigned int vboHandle;
     static unsigned int elementsHandle;
-    static int attribLocationColor;
+
+	static int attribLocationProjMtx;
+	static int attribLocationTex;
+	static int attribLocationColor;
+	static int attribLocationPosition;
+	static int attribLocationUV;
+
+	static int shaderHandle;
+	static int vertHandle;
+	static int fragHandle;
+
+	static GLuint fontTexture;
     static ofShader shader;
 };
 

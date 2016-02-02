@@ -52,8 +52,8 @@ void BaseTheme::updateColors()
     style->Colors[ImGuiCol_TextDisabled]          = ImVec4(col_main_text, 0.58f);
     style->Colors[ImGuiCol_WindowBg]              = ImVec4(col_win_backg, 1.00f);
     style->Colors[ImGuiCol_ChildWindowBg]         = ImVec4(col_main_area, 0.58f);
-    style->Colors[ImGuiCol_Border]                = ImVec4(col_win_backg, 0.00f);
-    style->Colors[ImGuiCol_BorderShadow]          = ImVec4(col_win_backg, 0.00f);
+    style->Colors[ImGuiCol_Border]                = ImVec4(col_win_backg, 1.00f);
+    style->Colors[ImGuiCol_BorderShadow]          = ImVec4(col_win_backg, 1.00f);
     style->Colors[ImGuiCol_FrameBg]               = ImVec4(col_main_area, 1.00f);
     style->Colors[ImGuiCol_FrameBgHovered]        = ImVec4(col_main_head, 0.78f);
     style->Colors[ImGuiCol_FrameBgActive]         = ImVec4(col_main_head, 1.00f);

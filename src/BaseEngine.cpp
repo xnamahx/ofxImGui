@@ -3,7 +3,19 @@
 
 unsigned int BaseEngine::vboHandle = 0;
 unsigned int BaseEngine::elementsHandle = 0;
+
+int BaseEngine::attribLocationProjMtx = 0;
+int BaseEngine::attribLocationTex = 0;
 int BaseEngine::attribLocationColor = 0;
+int BaseEngine::attribLocationPosition = 0;
+int BaseEngine::attribLocationUV = 0;
+GLuint BaseEngine::fontTexture = 0;
+
+int BaseEngine::shaderHandle = 0;
+int BaseEngine::vertHandle = 0;
+int BaseEngine::fragHandle = 0;
+
+
 ofShader BaseEngine::shader;
 
 void BaseEngine::onKeyPressed(ofKeyEventArgs& event)
